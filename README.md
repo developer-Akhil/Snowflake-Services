@@ -12,6 +12,7 @@ Compute Layer is responsible for executing queries and processing data. It is th
 **Storage Layer**:  Which provides long term storage of results.  This is often referred to as Remote Disk, and is currently implemented on either Amazon S3 or Microsoft Blob storage.
 
 **Can we modify warehouse-size on the fly?**
+
 Yes, you can modify the size of a warehouse (i.e. Vertical Scaling) even if it is in a running state, provided the new change will only be applicable for newly queued queries and all existing queries will still use old config. You can modify warehouse size from the Context menu and also modify the min & max cluster under warehouse>config.
 
 ![image](https://github.com/developer-Akhil/Snowflake-Services/assets/64408106/c9916622-7a79-4b4e-9571-8dedc289bd61)
@@ -19,6 +20,7 @@ Yes, you can modify the size of a warehouse (i.e. Vertical Scaling) even if it i
 ![image](https://github.com/developer-Akhil/Snowflake-Services/assets/64408106/a8e2a698-24e9-4c10-a2e5-9f56a6e15b95)
 
 **What are Maximized and Auto-scale mode in Snowflake?**
+
 In Snowflake, you can provision warehouses in 2 different modes. Either it can be on maximized mode or Auto-Scale mode.
 
 **Auto-Scale mode**: When you provide different values for Minimum & Maximum clusters like below, you are opting for auto-scale mode. In this mode, Snowflake starts and stops clusters as needed to dynamically manage the load on the warehouse. As the query load or concurrent user increases or decreases, the warehouse scale-out/in, respectively.
@@ -29,5 +31,11 @@ In Snowflake, you can provision warehouses in 2 different modes. Either it can b
 
 ![image](https://github.com/developer-Akhil/Snowflake-Services/assets/64408106/8ef68ff8-e6bd-495c-bc08-895862cc2a4c)
 
+**What are Auto-suspension and Auto-resumption?**
+
+A warehouse can be set to automatically resume or suspend, based on activity:
+	By default, auto-suspend is enabled. Snowflake automatically suspends the warehouse if it is inactive for the specified period of time.
+	By default, auto-resume is enabled. Snowflake automatically resumes the warehouse when any statement that requires a warehouse is submitted, and the warehouse is the current warehouse for the session.
+	Auto-suspend and auto-resume apply only to the entire warehouse and not to the individual clusters in the warehouse.
 
 
