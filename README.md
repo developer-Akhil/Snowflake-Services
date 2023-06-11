@@ -48,18 +48,24 @@ In Snowflake, we have predefined 2 types of scaling policy.
 The Standard scaling policy is designed for workloads with consistent performance requirements and is suitable for most production environments. It provides dedicated compute resources to a virtual warehouse, ensuring consistent performance regardless of the overall system load.
 **Under the Standard scaling policy:**
 
-	The virtual warehouse is allocated a fixed number of compute resources, including CPU, memory, and storage.
-	The allocated resources are reserved exclusively for the virtual warehouse, providing predictable and stable performance.
-	The compute resources remain allocated and available to the virtual warehouse even when it's idle, ensuring immediate availability for query execution.
+**1.**	The virtual warehouse is allocated a fixed number of compute resources, including CPU, memory, and storage.
+
+**2.**	The allocated resources are reserved exclusively for the virtual warehouse, providing predictable and stable performance.
+
+**3.**	The compute resources remain allocated and available to the virtual warehouse even when it's idle, ensuring immediate availability for query execution.
 The Standard scaling policy is recommended when you have critical workloads or when you require predictable performance and consistent query response times.
+
 **Economy Scaling Policy:**
 
 The Economy scaling policy is a cost-saving option that dynamically shares compute resources among multiple virtual warehouses. It is suitable for non-production environments, such as development, testing, and ad-hoc analytics, where consistent performance may not be a top priority.
 **Under the Economy scaling policy:**
 
-	Compute resources are shared across multiple virtual warehouses within a Snowflake account.
-	Compute resources are dynamically allocated and released based on the workload demands of each virtual warehouse.
-	When a virtual warehouse is idle, its compute resources are automatically released and made available to other virtual warehouses.
-	When workload demand increases, compute resources are dynamically allocated to virtual warehouses as needed.
+**1.**	Compute resources are shared across multiple virtual warehouses within a Snowflake account.
+
+**2.**	Compute resources are dynamically allocated and released based on the workload demands of each virtual warehouse.
+
+**3.**	When a virtual warehouse is idle, its compute resources are automatically released and made available to other virtual warehouses.
+
+**4.**	When workload demand increases, compute resources are dynamically allocated to virtual warehouses as needed.
 
 
