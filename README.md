@@ -43,6 +43,7 @@ A warehouse can be set to automatically resume or suspend, based on activity:
 In Snowflake, we have predefined 2 types of scaling policy.
 
 **1. Standard(default) and Economy**
+
 **2. Standard Scaling Policy**
 
 The Standard scaling policy is designed for workloads with consistent performance requirements and is suitable for most production environments. It provides dedicated compute resources to a virtual warehouse, ensuring consistent performance regardless of the overall system load.
@@ -54,6 +55,7 @@ The Standard scaling policy is designed for workloads with consistent performanc
 **2.**	The allocated resources are reserved exclusively for the virtual warehouse, providing predictable and stable performance.
 
 **3.**	The compute resources remain allocated and available to the virtual warehouse even when it's idle, ensuring immediate availability for query execution.
+
 The Standard scaling policy is recommended when you have critical workloads or when you require predictable performance and consistent query response times.
 
 **Economy Scaling Policy:**
