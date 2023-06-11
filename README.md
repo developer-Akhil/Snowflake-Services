@@ -46,6 +46,7 @@ In Snowflake, we have predefined 2 types of scaling policy.
 **Standard Scaling Policy**
 
 The Standard scaling policy is designed for workloads with consistent performance requirements and is suitable for most production environments. It provides dedicated compute resources to a virtual warehouse, ensuring consistent performance regardless of the overall system load.
+
 **Under the Standard scaling policy:**
 
 **1.**	The virtual warehouse is allocated a fixed number of compute resources, including CPU, memory, and storage.
