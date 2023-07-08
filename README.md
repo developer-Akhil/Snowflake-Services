@@ -116,6 +116,7 @@ It's important to choose a good clustering key for your tables in Snowflake, as 
 **Efficiency and Performance**: By storing data with similar clustering key values together within Micro-partitions, Snowflake achieves data locality and reduces the need for data scans during query execution. Queries that leverage the clustering key can skip irrelevant Micro-partitions, resulting in faster query performance and reduced resource consumption.
 
 **Q What is a Re-Clustering Key in Snowflake?**
+
 Re-clustering in Snowflake refers to the process of reorganizing the data within a table based on its clustering key. When data is initially loaded into a table, it may not be perfectly clustered based on the key, or over time, data may become less optimally clustered due to updates or deletes. Re-clustering can be done to optimize the table's data layout and improve query performance.
 Re-clustering in Snowflake is accomplished using the CLUSTER command. This command can be used to cluster an unclustered table or to re-cluster a table that already has a clustering key. The syntax for the CLUSTER command is as follows:
 
