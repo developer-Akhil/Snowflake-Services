@@ -88,21 +88,6 @@ The Economy scaling policy is a cost-saving option that dynamically shares compu
 
 **4.**	When workload demand increases, compute resources are dynamically allocated to virtual warehouses as needed.
 
-**What are Micro-partitions?**
-All data in Snowflake tables is automatically divided into micro-partitions, which are contiguous units of storage. Each micro-partition contains between 50 MB and 500 MB of uncompressed data (note that the actual size in Snowflake is smaller because data is always stored compressed). Groups of rows in tables are mapped into individual micro-partitions, organized in a columnar fashion. This size and structure allows for extremely granular pruning of very large tables, which can be comprised of millions, or even hundreds of millions, of micro-partitions.
-**Benefits of Micro-partitioning**
-
-The benefits of Snowflake’s approach to partitioning table data include:
-**1.**	In contrast to traditional static partitioning, Snowflake micro-partitions are derived automatically; they don’t need to be explicitly defined up-front or maintained by users.
-
-**2.**	As the name suggests, micro-partitions are small in size (50 to 500 MB, before compression), which enables extremely efficient DML and fine-grained pruning for faster queries.
-
-**3.**	Micro-partitions can overlap in their range of values, which, combined with their uniformly small size, helps prevent skew.
-
-**4.**	Columns are stored independently within micro-partitions, often referred to as columnar storage. This enables efficient scanning of individual columns; only the columns referenced by a query are scanned.
-
-**5.**	Columns are also compressed individually within micro-partitions. Snowflake automatically determines the most efficient compression algorithm for the columns in each micro-partition.
-
 **Q What is a Clustering Key in Snowflake?**
 
 When data is loaded into a Snowflake table, it is automatically distributed across multiple nodes in the Snowflake cluster. By specifying a Cluster Key, Snowflake can group together rows with similar values in the Cluster Key columns, and store them together on the same node. This can drastically reduce the amount of data that needs to be scanned when running a query that filters on the Cluster Key columns.
