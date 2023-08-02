@@ -162,29 +162,33 @@ Such queries are like −
 
 Query Results are stored and managed by Cloud Service Layer. It is very useful if the same query run multiple times, but condition is underlying data or base tables are not changed between time duration when query has to run multiple times. This caching has unique feature that is available for other users within the same account.
 For example, if user1 runs a query first time, the result gets stored in caching. When user2 also tries to run same query (by assuming that base tables and data are not changed), it fetches the result from Query Result caching.
- 
+
+
+**2nd Time Execution** (Reading directly from Query Results)
 
 ![image](https://github.com/developer-Akhil/Snowflake-Services/assets/64408106/1ddb3744-c096-47ef-a334-b01da505b4e0)
 
-
 Result cached are available for 24hours. But, counter of 24hours get reset each time when the same query re-run. For example, if a query ran at 10AM, its caching will be available until 10AM next day. If the same query re-run at 2PM on same day, now the caching will be available until 2PM next day.
 There are some criteria to fulfil to use query result cache –
-	Exact same SQL query should be re-run.
-	There should not be any random function in the SQL.
-	User must have right permissions to use it.
-	Query result should be enabled while running the query. By default, it's enabled until set otherwise.
+1. Exact same SQL query should be re-run.
+2. There should not be any random function in the SQL.
+3. User must have right permissions to use it.
+4. Query result should be enabled while running the query. By default, it's enabled until set otherwise.
 Some cases for Query result caching are −
-	Queries those required massive amount of computing like Aggregate function and semi structured data analysis.
-	Queries those run very frequently.
-	Queries those are complex.
-	Refactor the output of another query like "USE TABLE function RESULT_SCAN (<query_id>)"
+1. Queries those required massive amount of computing like Aggregate function and semi structured data analysis.
+2. Queries those run very frequently.
+3. Queries those are complex.
+4. Refactor the output of another query like "USE TABLE function RESULT_SCAN (<query_id>)"
+   
 Login into Snowflake and go to Worksheets. Resume the warehouse by running following query −
-ALTER WAREHOUSE COMPUTE_WH Resume;
+
+**ALTER WAREHOUSE COMPUTE_WH Resume;**
 
 Now, run following queries sequentially –
-USE SCHEMA SNOWFLAKE_SAMPLE_DATA.TPCH_SF100;
 
-SELECT l_returnflag, l_linestatus,
+**USE SCHEMA SNOWFLAKE_SAMPLE_DATA.TPCH_SF100;**
+
+**SELECT l_returnflag, l_linestatus,
 SUM(l_quantity) AS sum_qty,
 SUM(l_extendedprice) AS sum_base_price,
 SUM(l_extendedprice * (l_discount)) AS sum_disc_price,
@@ -197,6 +201,7 @@ FROM lineitem
 WHERE l_shipdate <= dateadd(day, 90, to_date('1998-12-01'))
 GROUP BY l_returnflag, l_linestatus
 ORDER BY l_returnflag, l_linestatus;
+**
 Click the Query Id. It will display the link of query Id. Then click on link as shown in previous example (Metadata-Caching). Check the Query profile, it will be displayed as shown below –
  
 It shows 80.5% data is scanned so no cache was involved. Suspend the warehouse by running following query −
