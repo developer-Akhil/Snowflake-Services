@@ -126,3 +126,40 @@ When the CLUSTER command is executed, Snowflake reads the data in the table and 
 Re-clustering can be done manually by running the CLUSTER command, or it can be automated using Snowflake's auto-reclustering feature. Auto-reclustering is a Snowflake feature that automatically re-clusters tables based on usage patterns and data changes. With auto-reclustering, Snowflake periodically monitors tables and re-clusters them as needed to maintain optimal query performance.
 
 
+**What is Cache in Snowflake and thier types?**
+
+Snowflake has a unique feature of caching. It provides fast and quick result with less data scan based on this caching. It even helps the customer to reduce their billing as well.
+There are basically three types of caching in Snowflake.
+**Metadata Caching**
+
+**Query Result Caching**
+
+**Data Caching**
+
+By default, cache is enabled for all snowflake session. But user can disable it based on their needs. However, user can disable only Query Result caching but there is no way to disable Metadata Caching as well as Data Caching.
+Metadata Caching
+Metadata stores at Cloud Service Layer hence caching is also at same layer. These metadata caching is always enabled for everyone.
+
+![image](https://github.com/developer-Akhil/Snowflake-Services/assets/64408106/8fe7a69e-c16e-4598-9de3-10c934c792fb)
+
+It basically contains the following details −
+1. Row Count in a table.
+2. MIN/MAX value of a column
+3. Number of DISTINCT values in a column
+4. Number of NULL values in a column
+5. Details of different table versions
+5. References of physical files
+   
+This information is basically used by SQL optimizer to execute faster and quicker. There could be a few queries those can be answered completely by metadata itself. For such kind of queries, no virtual warehouse is required but Cloud service charges may be applicable.
+Such queries are like −
+
+1. All SHOW commands
+2. MIN, MAX but limited to only Integer/Number/Date data types of columns.
+3. COUNT
+
+**Query Result Caching**
+
+Query Results are stored and managed by Cloud Service Layer. It is very useful if the same query run multiple times, but condition is underlying data or base tables are not changed between time duration when query has to run multiple times. This caching has unique feature that is available for other users within the same account.
+For example, if user1 runs a query first time, the result gets stored in caching. When user2 also tries to run same query (by assuming that base tables and data are not changed), it fetches the result from Query Result caching.
+ 
+
