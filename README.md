@@ -188,39 +188,68 @@ Now, run following queries sequentially –
 
 **USE SCHEMA SNOWFLAKE_SAMPLE_DATA.TPCH_SF100;**
 
-**SELECT l_returnflag, l_linestatus,
+SELECT l_returnflag, l_linestatus,
+
 SUM(l_quantity) AS sum_qty,
+
 SUM(l_extendedprice) AS sum_base_price,
+
 SUM(l_extendedprice * (l_discount)) AS sum_disc_price,
+
 SUM(l_extendedprice * (l_discount) * (1+l_tax)) AS sum_charge,
+
 AVG(l_quantity) AS avg_qty,
+
 AVG(l_extendedprice) AS avg_price,
+
 AVG(l_discount) AS avg_disc,
+
 COUNT(*) AS count_order
+
 FROM lineitem
+
 WHERE l_shipdate <= dateadd(day, 90, to_date('1998-12-01'))
+
 GROUP BY l_returnflag, l_linestatus
+
 ORDER BY l_returnflag, l_linestatus;
-**
+
 Click the Query Id. It will display the link of query Id. Then click on link as shown in previous example (Metadata-Caching). Check the Query profile, it will be displayed as shown below –
  
 It shows 80.5% data is scanned so no cache was involved. Suspend the warehouse by running following query −
-ALTER WAREHOUSE COMPUTE_WH Suspend;
+
+**ALTER WAREHOUSE COMPUTE_WH Suspend;**
+
 Run the same query again as we previously did −
-USE SCHEMA SNOWFLAKE_SAMPLE_DATA.TPCH_SF100;
+
+**USE SCHEMA SNOWFLAKE_SAMPLE_DATA.TPCH_SF100;**
+
 SELECT l_returnflag, l_linestatus,
+
 SUM(l_quantity) AS sum_qty,
+
 SUM(l_extendedprice) AS sum_base_price,
+
 SUM(l_extendedprice * (l_discount)) AS sum_disc_price,
+
 SUM(l_extendedprice * (l_discount) * (1+l_tax)) AS sum_charge,
+
 AVG(l_quantity) AS avg_qty,
+
 AVG(l_extendedprice) AS avg_price,
+
 AVG(l_discount) AS avg_disc,
+
 COUNT(*) AS count_order
+
 FROM lineitem
+
 WHERE l_shipdate <= dateadd(day, 90, to_date('1998-12-01'))
+
 GROUP BY l_returnflag, l_linestatus
+
 ORDER BY l_returnflag, l_linestatus;
+
 Click the Query Id. It will display the link of query Id. Then click on link as shown in previous example (Metadata-Caching). Check the Query profile, it will be displayed as shown below −
  
 It shows query result reuse. It means that without warehouse query it ran successfully and entire result set has been taken from Query Result Caching.
