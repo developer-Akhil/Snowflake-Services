@@ -130,6 +130,7 @@ Re-clustering can be done manually by running the CLUSTER command, or it can be 
 
 Snowflake has a unique feature of caching. It provides fast and quick result with less data scan based on this caching. It even helps the customer to reduce their billing as well.
 There are basically three types of caching in Snowflake.
+
 **Metadata Caching**
 
 **Query Result Caching**
