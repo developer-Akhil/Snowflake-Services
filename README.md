@@ -176,7 +176,6 @@ Such queries are like −
 Query Results are stored and managed by Cloud Service Layer. It is very useful if the same query run multiple times, but condition is underlying data or base tables are not changed between time duration when query has to run multiple times. This caching has unique feature that is available for other users within the same account.
 For example, if user1 runs a query first time, the result gets stored in caching. When user2 also tries to run same query (by assuming that base tables and data are not changed), it fetches the result from Query Result caching.
 
-
 **2nd Time Execution** (Reading directly from Query Results)
 
 ![image](https://github.com/developer-Akhil/Snowflake-Services/assets/64408106/1ddb3744-c096-47ef-a334-b01da505b4e0)
