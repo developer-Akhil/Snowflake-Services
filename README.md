@@ -265,4 +265,3 @@ ORDER BY l_returnflag, l_linestatus;
 Click the Query Id. It will display the link of query Id. Then click on link as shown in previous example (Metadata-Caching). Check the Query profile, it will be displayed as shown below −
  
 It shows query result reuse. It means that without warehouse query it ran successfully and entire result set has been taken from Query Result Caching.
-
