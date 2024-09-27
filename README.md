@@ -12,7 +12,6 @@ The choice between Snowflake, Amazon Redshift, and Azure Synapse Analytics (form
 
 **Data Sharing Economy:** Snowflake's pricing model is based on actual usage, which can be cost-effective for organizations with varying workloads.
 
-
 # Snowflake Database Architecture
 
 ![image](https://github.com/developer-Akhil/Snowflake-Services/assets/64408106/af24d875-2011-4246-8913-a940f26f89dd)
