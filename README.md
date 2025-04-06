@@ -1,62 +1,62 @@
 **Contents**
-**How many types of accounts in snowflake?**
-**Why we need snowflake when do we have redshift and azure synapse?**
-Snowflake Database Architecture
-Understanding End-to-End Encryption in Snowflake	5
-Order of execution of a Query	6
-Can we modify warehouse-size on the fly?	7
-What are Maximized and Auto-scale mode in Snowflake?	7
-What are Auto-suspension and Auto-resumption?	8
-Secure Data Sharing	9
-Scaling Policy	11
-Micro-partitions	12
-Clustering Key	15
-Re-Clustering Key	16
-Automatic Clustering	16
-Snowflake – Cache	17
-Q How to clear a Snowflake cache?	23
-System-Defined Roles	24
-ORGADMIN (aka Organization Administrator)	24
-ACCOUNTADMIN (aka Account Administrator)	24
-SECURITYADMIN (aka Security Administrator)	25
-USERADMIN (aka User and Role Administrator)	26
-SYSADMIN (aka System Administrator)	27
-PUBLIC	28
-User and Role	29
-Privilege	29
-Snowflake Integration	30
-External Table	34
-SnowPipe	34
-Change Data capture (CDC)	38
-Standard Streams	39
-Append-only Streams	39
-Insert-only Streams	39
-Retrieve up to the last 100 queries run in the current session:	39
-What Problem Qualify Solved?	40
-CAST and TRY_CAST	41
-Information Schema and Public Schema	42
-Snowflake – Parament/Transient/Temporary Tables	44
-Delete vs Truncate	46
-Stored Procedure	47
-Time Travel	47
-Fail Safe	47
-Retention Period	49
-Zero Copy Clone	50
-Copy table vs Clone table	50
-Undrop a Table, Database or Schema	51
-Regular Schema vs Managed Schema	53
-Tasks	53
-Snowflake – View	54
-How do you stop a running query in SnowSQL	57
-Masking Policy (Dynamic Data Masking)	58
-Snowflake Row-level Security	59
-What key considerations should be addressed when migrating an on-premise Oracle database to Snowflake?	60
-How are costs incurred?	60
-Snowflake Credit Usage too high compared to query runtime	60
-Snowflake query credit calculation	60
-If a query is taking longer to execute compared to its previous run, what actions should we consider?	60
-I have a table that contains a gender column that has three values: male, female, and null. How many partitions will create a gender column in snowflake?	61
-Bloom Filter in Snowflake	63
+1. How many types of accounts in snowflake?
+2. Why we need snowflake when do we have redshift and azure synapse?
+3. Snowflake Database Architecture
+4. Understanding End-to-End Encryption in Snowflake
+5. Order of execution of a Query
+6. Can we modify warehouse-size on the fly?
+7. What are Maximized and Auto-scale mode in Snowflake?
+8. What are Auto-suspension and Auto-resumption?
+9. Secure Data Sharing
+10. Scaling Policy
+11. Micro-partitions
+12. Clustering Key
+13. Re-Clustering Key
+14. Automatic Clustering
+15. Snowflake – Cache
+16. Q How to clear a Snowflake cache?
+17. System-Defined Roles
+    a. ORGADMIN (aka Organization Administrator)
+    b. ACCOUNTADMIN (aka Account Administrator)
+    c. SECURITYADMIN (aka Security Administrator)
+    d. USERADMIN (aka User and Role Administrator)
+    e. SYSADMIN (aka System Administrator)
+    f. PUBLIC
+18. User and Role
+19. Privilege
+20. Snowflake Integration
+21. External Table
+22. SnowPipe
+23. Change Data capture (CDC)
+    Standard Streams	39
+        a. Append-only Streams	39
+        b. Insert-only Streams	39
+24. Retrieve up to the last 100 queries run in the current session
+25. What Problem Qualify Solved?
+26. CAST and TRY_CAST
+27. Information Schema and Public Schema
+28. Snowflake – Parament/Transient/Temporary Tables
+29. Delete vs Truncate
+30. Stored Procedure
+31. Time Travel
+32. Fail Safe
+33. Retention Period
+34. Zero Copy Clone
+35. Copy table vs Clone table
+36. Undrop a Table, Database or Schema
+37. Regular Schema vs Managed Schema
+38. Tasks
+39. Snowflake – View
+40. How do you stop a running query in SnowSQL
+41. Masking Policy (Dynamic Data Masking)
+42. Snowflake Row-level Security
+43. What key considerations should be addressed when migrating an on-premise Oracle database to Snowflake?
+44. How are costs incurred?
+45. Snowflake Credit Usage too high compared to query runtime
+46. Snowflake query credit calculation
+47. If a query is taking longer to execute compared to its previous run, what actions should we consider?
+48. I have a table that contains a gender column that has three values: male, female, and null. How many partitions will create a gender column in snowflake?
+49. Bloom Filter in Snowflake
 
 
 
