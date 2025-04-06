@@ -1,7 +1,6 @@
 **Contents**
-How many types of accounts in snowflake?
-
-Why we need snowflake when do we have redshift and azure synapse?
+**How many types of accounts in snowflake?**
+**Why we need snowflake when do we have redshift and azure synapse?**
 Snowflake Database Architecture
 Understanding End-to-End Encryption in Snowflake	5
 Order of execution of a Query	6
