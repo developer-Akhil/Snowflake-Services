@@ -1,4 +1,4 @@
-**Contents**
+# Contents
 1. How many types of accounts in snowflake?
 2. Why we need snowflake when do we have redshift and azure synapse?
 3. Snowflake Database Architecture
@@ -128,13 +128,37 @@ Snowflake enables secure data sharing between organizations by allowing data pro
 Snowflake provides extensive audit and compliance features to track and monitor data access and changes, ensuring that data is protected and compliant with regulatory requirements.
 In summary, end-to-end encryption in Snowflake encompasses encryption at rest, encryption in transit, client-side encryption, hierarchical key management, and role-based access control to provide a comprehensive security framework for your data. It helps protect sensitive information and ensures that data remains confidential and secure throughout its lifecycle within the Snowflake platform.
 
-**Can we modify warehouse-size on the fly?**
+# Order of execution of a Query
+
+<img width="239" alt="image" src="https://github.com/user-attachments/assets/1f5d9ec6-6915-45ee-89ad-e517cf5fa0b8" />
+
+# Can we modify warehouse-size on the fly?**
 
 Yes, you can modify the size of a warehouse (i.e. Vertical Scaling) even if it is in a running state, provided the new change will only be applicable for newly queued queries and all existing queries will still use old config. You can modify warehouse size from the Context menu and also modify the min & max cluster under warehouse>config.
 
 ![image](https://github.com/developer-Akhil/Snowflake-Services/assets/64408106/c9916622-7a79-4b4e-9571-8dedc289bd61)
 
+# What are Maximized and Auto-scale mode in Snowflake?
+
+In Snowflake, you can provision warehouses in 2 different modes. Either it can be on maximized mode or Auto-Scale mode.
+
+**Auto-Scale mode**: When you provide different values for Minimum & Maximum clusters like below, you are opting for auto-scale mode. In this mode, Snowflake starts and stops clusters as needed to dynamically manage the load on the warehouse. As the query load or concurrent user increases or decreases, the warehouse scale-out/in, respectively.
+
+![image](https://github.com/user-attachments/assets/f31a9fba-d778-460d-b49f-a834056eb60e)
+
+**Maximized mode**: When you provide the same value (Should be >1) for Minimum & Maximum cluster like below, you are opting for maximized mode. In this mode, when the warehouse is started, Snowflake starts all the clusters so that maximum resources are available while the warehouse is running. This mode is suitable when you know your workload has concurrent users, and you are going to need a provisioned server to support them.
+
+![image](https://github.com/user-attachments/assets/e4033a34-fac0-4e9c-acbc-5c5967a274ad)
+
+# What are Auto-suspension and Auto-resumption?
+A warehouse can be set to automatically resume or suspend, based on activity:
+1. By default, auto-suspend is enabled. Snowflake automatically suspends the warehouse if it is inactive for the specified period of time.
+2. By default, auto-resume is enabled. Snowflake automatically resumes the warehouse when any statement that requires a warehouse is submitted, and the warehouse is the current warehouse for the session.
+3. Auto-suspend and auto-resume apply only to the entire warehouse and not to the individual clusters in the warehouse.
+
+
 **Under the Economy scaling policy:**
+
 1.	Compute resources are shared across multiple virtual warehouses within a Snowflake account.
 2.	Compute resources are dynamically allocated and released based on the workload demands of each virtual warehouse.
 3.	When a virtual warehouse is idle, its compute resources are automatically released and made available to other virtual warehouses.
