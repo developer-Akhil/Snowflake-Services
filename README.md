@@ -1,3 +1,66 @@
+**Contents**
+How many types of accounts in snowflake?
+
+Why we need snowflake when do we have redshift and azure synapse?
+Snowflake Database Architecture
+Understanding End-to-End Encryption in Snowflake	5
+Order of execution of a Query	6
+Can we modify warehouse-size on the fly?	7
+What are Maximized and Auto-scale mode in Snowflake?	7
+What are Auto-suspension and Auto-resumption?	8
+Secure Data Sharing	9
+Scaling Policy	11
+Micro-partitions	12
+Clustering Key	15
+Re-Clustering Key	16
+Automatic Clustering	16
+Snowflake – Cache	17
+Q How to clear a Snowflake cache?	23
+System-Defined Roles	24
+ORGADMIN (aka Organization Administrator)	24
+ACCOUNTADMIN (aka Account Administrator)	24
+SECURITYADMIN (aka Security Administrator)	25
+USERADMIN (aka User and Role Administrator)	26
+SYSADMIN (aka System Administrator)	27
+PUBLIC	28
+User and Role	29
+Privilege	29
+Snowflake Integration	30
+External Table	34
+SnowPipe	34
+Change Data capture (CDC)	38
+Standard Streams	39
+Append-only Streams	39
+Insert-only Streams	39
+Retrieve up to the last 100 queries run in the current session:	39
+What Problem Qualify Solved?	40
+CAST and TRY_CAST	41
+Information Schema and Public Schema	42
+Snowflake – Parament/Transient/Temporary Tables	44
+Delete vs Truncate	46
+Stored Procedure	47
+Time Travel	47
+Fail Safe	47
+Retention Period	49
+Zero Copy Clone	50
+Copy table vs Clone table	50
+Undrop a Table, Database or Schema	51
+Regular Schema vs Managed Schema	53
+Tasks	53
+Snowflake – View	54
+How do you stop a running query in SnowSQL	57
+Masking Policy (Dynamic Data Masking)	58
+Snowflake Row-level Security	59
+What key considerations should be addressed when migrating an on-premise Oracle database to Snowflake?	60
+How are costs incurred?	60
+Snowflake Credit Usage too high compared to query runtime	60
+Snowflake query credit calculation	60
+If a query is taking longer to execute compared to its previous run, what actions should we consider?	60
+I have a table that contains a gender column that has three values: male, female, and null. How many partitions will create a gender column in snowflake?	61
+Bloom Filter in Snowflake	63
+
+
+
 # Snowflake-Services
 **Why we need snowflake when do we have redshift and azure synapse?**
 
