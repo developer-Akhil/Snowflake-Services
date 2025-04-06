@@ -86,6 +86,34 @@ Compute Layer is responsible for executing queries and processing data. It is th
 
 **Storage Layer**:  Which provides long term storage of results.  This is often referred to as Remote Disk, and is currently implemented on either Amazon S3 or Microsoft Blob storage.
 
+**Understanding End-to-End Encryption in Snowflake**
+
+End-to-end encryption in Snowflake is a feature that provides enhanced security for data stored and processed within the Snowflake cloud data platform. It ensures that data remains encrypted throughout its entire lifecycle, from when it is initially ingested into Snowflake until it is accessed and processed by authorized users or applications. Here's an overview of how end-to-end encryption works in **Snowflake:**
+**Encryption at Rest (Encryption at rest is designed to prevent the attacker from accessing the unencrypted data by ensuring the data is encrypted when on disk.):**
+Snowflake encrypts data at rest using strong encryption algorithms, such as Advanced Encryption Standard (AES) with 256-bit keys. This encryption applies to all data stored in Snowflake, including tables, metadata, and backups. Each piece of data is encrypted individually.
+**Snowflake-managed Keys**
+All Snowflake customer data is encrypted by default using the latest security standards and best practices. Snowflake uses strong AES 256-bit encryption with a hierarchical key model rooted in a hardware security module.
+Keys are automatically rotated on a regular basis by the Snowflake service, and data can be automatically re-encrypted (“rekeyed”) on a regular basis. Data encryption and key management is entirely transparent and requires no configuration or management.
+**Encryption in Transit:**
+Snowflake uses Transport Layer Security (TLS) to encrypt data in transit between the client and the Snowflake service. This ensures that data transferred over the network is secure and protected from eavesdropping (secretly listen to a conversation.).
+**Data Key Management:**
+One of the key components of Snowflake's end-to-end encryption is its use of hierarchical key management. Snowflake manages a hierarchy of encryption keys, including:
+Root Key: The top-level key that encrypts and decrypts data keys.
+Data Key: A unique key generated for each micro-partition of data in Snowflake. These data keys are used to encrypt the actual data within micro-partitions.
+Metadata Key: Used to encrypt metadata associated with data, such as column names and data types.
+**Client-Side Encryption:** 
+Snowflake allows clients to perform client-side encryption before sending data to Snowflake. Clients can encrypt data using their own encryption keys (called customer-managed keys or CMKs). This provides an additional layer of security, as the data is already encrypted before it reaches Snowflake's infrastructure.
+**Role-Based Access Control (RBAC):**
+Snowflake's RBAC system ensures that only authorized users and roles can access and decrypt specific data. Users and roles are granted access to specific objects in Snowflake, and these permissions determine who can read, write, or modify data.
+Zero-Copy Clone Encryption:
+Snowflake allows for the creation of zero-copy clones of data, which also inherit the same encryption settings as the source data. This ensures that cloned data maintains the same level of security as the original data.
+**Secure Data Sharing:**
+Snowflake enables secure data sharing between organizations by allowing data providers to share encrypted data with data consumers. Data sharing is controlled, and data remains encrypted during the sharing process.
+**Audit and Compliance:**
+Snowflake provides extensive audit and compliance features to track and monitor data access and changes, ensuring that data is protected and compliant with regulatory requirements.
+In summary, end-to-end encryption in Snowflake encompasses encryption at rest, encryption in transit, client-side encryption, hierarchical key management, and role-based access control to provide a comprehensive security framework for your data. It helps protect sensitive information and ensures that data remains confidential and secure throughout its lifecycle within the Snowflake platform.
+
+
 **Can we modify warehouse-size on the fly?**
 
 Yes, you can modify the size of a warehouse (i.e. Vertical Scaling) even if it is in a running state, provided the new change will only be applicable for newly queued queries and all existing queries will still use old config. You can modify warehouse size from the Context menu and also modify the min & max cluster under warehouse>config.
