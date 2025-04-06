@@ -59,10 +59,11 @@
 49. Bloom Filter in Snowflake
 
 
+# How many types of accounts in snowflake?
+Standard, Enterprise, Business Critical, and Virtual Private Snowflake (VPS).
 
 # Snowflake-Services
 **Why we need snowflake when do we have redshift and azure synapse?**
-
 The choice between Snowflake, Amazon Redshift, and Azure Synapse Analytics (formerly known as SQL Data Warehouse) depends on your specific requirements and the existing technology stack of your organization. Each of these data warehousing solutions has its strengths and may be more suitable for different use cases:
 
 **Snowflake:**
