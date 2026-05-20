@@ -18,9 +18,9 @@ CLASSIFY_TEXT() takes:
 2.	A list of categories 
 and returns the most appropriate category.
 
-**Does it require model training?**
-Answer:
-•	No. 
+**Does it require model training?** \
+Answer: \
+•	No. \
 •	Uses zero-shot classification.
 
 **Syntax**
