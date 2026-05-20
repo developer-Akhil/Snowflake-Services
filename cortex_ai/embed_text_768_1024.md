@@ -13,12 +13,14 @@ The numbers refer to the dimensions (or length) of the resulting vector arrays:
 
 •	EMBED_TEXT_768: Returns a 768-dimensional vector. It typically utilizes models like snowflake-arctic-embed-m or e5-base-v2. This dimension offers a strong balance between capturing semantic meaning and optimizing storage/computation.
 ```
-SELECT SNOWFLAKE.CORTEX.EMBED_TEXT_768('snowflake-arctic-embed-m-v1.5', 'Your text goes here') AS vector_embedding;
+SELECT SNOWFLAKE.CORTEX.EMBED_TEXT_768(
+    'snowflake-arctic-embed-m-v1.5',
+    'What is Cortex AI?') AS vector_embedding;
 ```
 •	EMBED_TEXT_1024: Returns a 1024-dimensional vector, which allows for capturing deeper, more granular linguistic nuances, though it requires slightly more storage and compute to process.
 ```
 SELECT SNOWFLAKE.CORTEX.EMBED_TEXT_1024(
     'e5-base-v2',
-    'Explain vector embeddings'
-);
+    'Explain vector embeddings') AS vector_embedding;
 ```
+
