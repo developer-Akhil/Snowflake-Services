@@ -38,3 +38,18 @@ Similarity Search
    ↓
 LLM Response
 ```
+
+**What is Similarity Search**\
+Similarity Search is an AI-powered search technique used to find data that is semantically similar rather than just exact keyword matches.
+
+**Example**
+**User Query**
+
+"How to build AI chatbot?"
+
+Traditional Keyword Search
+
+May only return:
+
+“AI chatbot”
+“build chatbot”
