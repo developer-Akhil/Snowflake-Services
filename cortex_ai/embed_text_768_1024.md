@@ -24,3 +24,17 @@ SELECT SNOWFLAKE.CORTEX.EMBED_TEXT_1024(
     'Explain vector embeddings') AS vector_embedding;
 ```
 
+**Common Architecture Flow- RAG Pipeline**
+```
+Documents
+   ↓
+Chunking
+   ↓
+EMBED_TEXT_768 / 1024
+   ↓
+Store vectors in Snowflake
+   ↓
+Similarity Search
+   ↓
+LLM Response
+```
